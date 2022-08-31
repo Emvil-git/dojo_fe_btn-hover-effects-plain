@@ -5,6 +5,10 @@ body, button {
 }
 
 body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     margin: 0;
 
     background-color: #efefe5;
@@ -12,6 +16,7 @@ body{
 
 .main{
     margin: 0 3rem;
+    width: 100%;
 }
 
 .header__title{
@@ -20,18 +25,22 @@ body{
 
 .cont{
     display: grid;
-    grid-template-columns: repeat(5, minmax(0,1fr));
+    grid-template-columns: repeat(4, minmax(0,1fr));
+
+    grid-row-gap: 3rem;
 
     justify-items: center;
 
-    width: 100%;
+    margin: 0 5rem;
 }
 
-.cont__text{
+.cont-sect, .cont__text {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
 
+.cont__text{
     margin-top: 2rem;
 }
 
@@ -39,8 +48,31 @@ body{
     margin: 0;
 }
 
+.cont__subtitle{
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    width: 15rem;
+}
+
 button{
     font-size: 1rem;
     padding: 0.75rem 1.5rem;
     width: fit-content;
+
+    background: none;
+
+    outline: none;
+
+    border-radius: 25px;
+    
+}
+
+#fill-up{
+    transition: 0.5s cubic-bezier(0.79,0.14,0.15,0.86);
+}
+
+#fill-up:hover, #fill-up:focus{
+  box-shadow: inset 0 -3.25em 0 0 black;
+  color: #efefe5;
 }
