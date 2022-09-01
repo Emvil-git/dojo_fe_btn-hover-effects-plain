@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
 
+*, *:before, *:after{
+    box-sizing: border-box;
+}
+
 body, button {
     font-family: 'Sora', sans-serif;
 }
@@ -39,12 +43,12 @@ body{
     padding-left: 1rem;
     padding-right: 20rem;
     border-right: black solid 0.85rem;
-    transition: 0.65s cubic-bezier(0.79,0.14,0.15,0.86);
+    transition: 0.65s cubic-bezier(0.77,0,0.18,1);
 }
 
 .hover-effect:hover, .hover-effect:focus{
     box-shadow: inset -60rem 0 0 0 black;
-    color: #efefe5;
+    color: #fffc49;
   }
 
 .cont{
@@ -80,6 +84,7 @@ body{
 }
 
 button{
+    position: relative;
     font-size: 1rem;
     padding: 0.75rem 1.5rem;
     width: fit-content;
@@ -89,6 +94,8 @@ button{
     outline: none;
 
     border-radius: 25px;
+
+    overflow: hidden;
     
 }
 
@@ -104,4 +111,41 @@ button:disabled{
 #fill-up:hover, #fill-up:focus{
   box-shadow: inset 0 -3.25em 0 0 black;
   color: #efefe5;
+}
+
+#data-shift{
+    
+    overflow: hidden;
+}
+
+#data-shift:hover:before{
+    box-sizing: border-box;
+    opacity:1;
+    transform: translate(0,0);
+}
+
+#data-shift:before{
+    box-sizing: border-box;
+    content: attr(data-shift);
+    position: absolute;
+    top: 27.3%;
+    right: 0%;
+
+    width: 100%;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translate(-100%,0);
+    transition: all .3s cubic-bezier(0.79,0.14,0.15,0.86);
+}
+
+#data-shift:hover div{
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translate(100%,0)
+}
+
+#data-shift div{
+    box-sizing: border-box;
+    text-transform: uppercase;
+    transition: all .3s ease-in-out;
 }
